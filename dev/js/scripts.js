@@ -49,7 +49,11 @@ function textcomein(){
 
     const tl = gsap.timeline();
 
-    tl.from("#title",{duration:.5, alpha:0, transformOrigin: "50% 50%", scaleY:0, scaleX: 0});
+    tl.from("#title",{duration:.5, transformOrigin: "50% 50%", scaleY:0, scaleX: 0, x: 0, y:0, ease: "none"})
+      .to("#the", {duration:.75, x: -106, y: -13, ease: "none"},"same1")
+      .to("#huntress", {duration:.75, x: 43, y: -13, ease: "none"},"same1")
+      .to("#sofia", {duration:.75, x: 4, y: 14, ease: "none"},"same1")
+      .to("#samatar", {duration:.75, x: 4, y: 14, ease: "none"},"same1");
 
     return tl;
 }
@@ -59,7 +63,7 @@ function textcomein(){
 mainTL.add(textureglitch())
       .add(lettersgrow())
       .add(textureoffscreen())
-      .add(textcomein);
+      .add(textcomein());
 
 
 GSDevTools.create();
