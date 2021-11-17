@@ -9,12 +9,14 @@ function textureglitch(){
 
     const tl = gsap.timeline();
 
-    tl.from("#ptexture",{duration:.25, alpha: 0})
+    tl.from("#ptexture",{duration:.005, alpha: 0})
       .to("#ptexture",{duration:.25, x: -10, y:-10, ease: "rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp: false})", alpha: 0})
       .to("#ptexture",{duration:.25, alpha:1})
       .to("#ptexture",{duration:.25, x: 0, y:0, alpha:0, ease: "rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp: false})"})
       .to("#ptexture",{duration:.25, alpha:1})
-      .to("#ptexture",{duration:.25, x: 20, y:-20 , alpha:0, ease: "rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp: false})"})
+      .to("#ptexture",{duration:.25, x: 20, y:20 , alpha:0, ease: "rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp: false})"})
+      .to("#ptexture",{duration:.25, alpha:1})
+      .to("#ptexture",{duration:.25, x: 0, y:0 , alpha:0, ease: "rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp: false})"})
       .to("#ptexture",{duration:.25, alpha:1});
 
     return tl;
@@ -24,23 +26,42 @@ function lettersgrow(){
 
     const tl = gsap.timeline();
 
-    tl.from(".set1",{duration:.25, transformOrigin: "50% 50%", scaleX:0, scaleY:0})
-    .to(".set1",{duration:.5, transformOrigin: "50% 50%", scaleX:.8, scaleY:.8, ease: "none"})
-    .from(".set2",{duration:.25, transformOrigin: "50% 50%", scaleX:0, scaleY:0})
-    .to(".set2",{duration:.5, transformOrigin: "50% 50%", scaleX:.8, scaleY:.8, ease: "none"})
-    .to(".set1",{duration:.5, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"})
-    .to(".set2",{duration:.5, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"})
-    .to(".set2",{duration:.5, alpha:0})
-    .to(".set1",{duration:.5, alpha:0});
+    tl.fromTo(".set1",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25})
+      .to(".set1",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+      .fromTo(".set2",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+      .to(".set2",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+      .fromTo(".set3",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+      .to(".set3",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+      .fromTo(".set4",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+      .to(".set4",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+      .fromTo(".set5",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+      .to(".set5",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+      .fromTo(".set6",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+      .to(".set6",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=50%");
 
     return tl;
 }
 
-function textureoffscreen(){
+function texturetextoffscreen(){
 
     const tl = gsap.timeline();
-
-    tl.to("#ptexture",{duration:.5, alpha:0});
+   
+    tl.to("#ptexture", {duration: .5, x:-10, y:-10, ease: "rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp: false})", alpha: 0}, "same1")
+    .to("#letters", {duration: .5, x:10, y:10, ease: "rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp: false})", alpha: 0}, "same1")
+    .to("#ptexture",{duration:.25, alpha:1}, "same2")
+    .to("#letters",{duration:.25, alpha:1}, "same2")
+    .to("#ptexture", {duration: .5, x:0, y:0, ease: "rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp: false})", alpha: 0}, "same3")
+    .to("#letters", {duration: .5, x:0, y:0, ease: "rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp: false})", alpha: 0}, "same3")
+    .to("#ptexture",{duration:.25, alpha:1}, "same4")
+    .to("#letters",{duration:.25, alpha:1}, "same4")
+    .to("#ptexture", {duration: .5, x:20, y:20, ease: "rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp: false})", alpha: 0}, "same5")
+    .to("#letters", {duration: .5, x:-20, y:-20, ease: "rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp: false})", alpha: 0}, "same5")
+    .to("#ptexture",{duration:.25, alpha:1}, "same6")
+    .to("#letters",{duration:.25, alpha:1}, "same6")
+    .to("#ptexture", {duration: .5, x:0, y:0, ease: "rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp: false})"}, "same7")
+    .to("#letters", {duration: .5, x:0, y:0, ease: "rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp: false})"}, "same7")
+    .to("#ptexture",{duration:.05, alpha:0}, "same8")
+    .to("#letters",{duration:.05, alpha:0}, "same8");
 
     return tl;
 }
@@ -49,11 +70,11 @@ function textcomein(){
 
     const tl = gsap.timeline();
 
-    tl.from("#title",{duration:.5, transformOrigin: "50% 50%", scaleY:0, scaleX: 0, x: 0, y:0, ease: "none"})
-      .to("#the", {duration:.75, x: -106, y: -13, ease: "none"},"same1")
-      .to("#huntress", {duration:.75, x: 43, y: -13, ease: "none"},"same1")
-      .to("#sofia", {duration:.75, x: 4, y: 14, ease: "none"},"same1")
-      .to("#samatar", {duration:.75, x: 4, y: 14, ease: "none"},"same1");
+    tl.from("#title",{duration:.75, transformOrigin: "50% 50%", scaleY:0, scaleX: 0, x: 0, y:0, ease: "none"})
+      .to("#the", {duration:1, x: -106, y: -13, ease: "none"},"same4")
+      .to("#huntress", {duration:1, x: 43, y: -13, ease: "none"},"same4")
+      .to("#sofia", {duration:1, x: 4, y: 14, ease: "none"},"same4")
+      .to("#samatar", {duration:1, x: 4, y: 14, ease: "none"},"same4");
 
     return tl;
 }
@@ -62,8 +83,8 @@ function textcomein(){
 
 mainTL.add(textureglitch())
       .add(lettersgrow())
-      .add(textureoffscreen())
-      .add(textcomein());
+      .add(texturetextoffscreen())
+      .add(textcomein(),"+=50%");
 
 
 GSDevTools.create();
