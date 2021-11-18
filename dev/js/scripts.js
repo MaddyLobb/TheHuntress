@@ -26,21 +26,56 @@ function lettersgrow(){
 
     const tl = gsap.timeline();
 
-    tl.fromTo(".set1",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25})
-      .to(".set1",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
-      .fromTo(".set2",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
-      .to(".set2",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
-      .fromTo(".set3",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
-      .to(".set3",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
-      .fromTo(".set4",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
-      .to(".set4",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
-      .fromTo(".set5",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
-      .to(".set5",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
-      .fromTo(".set6",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
-      .to(".set6",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=50%");
+    tl.from("#thu",{duration:.05, alpha: 0})
+      .fromTo("#thu",{duration:5, transformOrigin: "50% 50%", scaleX:3, scaleY:3, x: 0, y:0}, {scaleX:2, scaleY:2})
+      .to("#thu",{duration:.25, alpha:0})
+      .from("#nhst",{duration:.05, alpha: 0})
+      .fromTo("#nhst",{duration:5, transformOrigin: "50% 50%", scaleX:3, scaleY:3}, {scaleX:2, scaleY:2})
+      .to("#nhst",{duration:.25, alpha:0})
+      .from("#rhes",{duration:.05, alpha: 0})
+      .fromTo("#rhes",{duration:5, transformOrigin: "50% 50%", scaleX:3, scaleY:3}, {scaleX:2, scaleY:2})
+      .to("#rhes",{duration:.05, alpha:0},"same")
+      .from("#letters",{duration:.05, alpha: 0},"same")
+      .fromTo("#letters",{duration:5, transformOrigin: "50% 50%", scaleX:3, scaleY:3, x: 0, y:0}, {scaleX:1, scaleY:1});
 
     return tl;
 }
+
+function backgroundtexture(){
+
+  const tl = gsap.timeline();
+
+  tl.to("#p7",{duration:1, x:20, y:-20, transformOrigin: "50% 50%"},"same")
+    .to("#p8",{duration:1, x:-40, y:40, transformOrigin: "50% 50%"},"same")
+    .to("#p2",{duration:1, x:40, y:-40, transformOrigin: "50% 50%"},"same")
+    .to("#p3",{duration:1, x:-20, y:20, transformOrigin: "50% 50%"},"same")
+    .to("#p7",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2")
+    .to("#p8",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2")
+    .to("#p2",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2")
+    .to("#p3",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2");
+
+  return tl;
+}
+
+// function lettersgrow(){
+
+//     const tl = gsap.timeline();
+
+//     tl.fromTo(".set1",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25})
+//       .to(".set1",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+//       .fromTo(".set2",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+//       .to(".set2",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+//       .fromTo(".set3",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+//       .to(".set3",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+//       .fromTo(".set4",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+//       .to(".set4",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+//       .fromTo(".set5",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+//       .to(".set5",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+//       .fromTo(".set6",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+//       .to(".set6",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=50%");
+
+//     return tl;
+// }
 
 function texturetextoffscreen(){
 
@@ -82,7 +117,8 @@ function textcomein(){
 
 
 mainTL.add(textureglitch())
-      .add(lettersgrow())
+      .add(lettersgrow(), "same")
+      .add(backgroundtexture(),"same")
       .add(texturetextoffscreen())
       .add(textcomein(),"+=50%");
 
