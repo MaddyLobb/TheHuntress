@@ -22,37 +22,56 @@ function textureglitch(){
     return tl;
 }
 
-function lettersgrow(){
+// function lettersgrow(){
 
-    const tl = gsap.timeline();
+//     const tl = gsap.timeline();
 
-    tl.from("#thu",{duration:.05, alpha: 0})
-      .fromTo("#thu",{duration:5, transformOrigin: "50% 50%", scaleX:3, scaleY:3, x: 0, y:0}, {scaleX:2, scaleY:2})
-      .to("#thu",{duration:.25, alpha:0})
-      .from("#nhst",{duration:.05, alpha: 0})
-      .fromTo("#nhst",{duration:5, transformOrigin: "50% 50%", scaleX:3, scaleY:3}, {scaleX:2, scaleY:2})
-      .to("#nhst",{duration:.25, alpha:0})
-      .from("#rhes",{duration:.05, alpha: 0})
-      .fromTo("#rhes",{duration:5, transformOrigin: "50% 50%", scaleX:3, scaleY:3}, {scaleX:2, scaleY:2})
-      .to("#rhes",{duration:.05, alpha:0},"same")
-      .from("#letters",{duration:.05, alpha: 0},"same")
-      .fromTo("#letters",{duration:5, transformOrigin: "50% 50%", scaleX:3, scaleY:3, x: 0, y:0}, {scaleX:1, scaleY:1});
+//     tl.from("#thu",{duration:.05, alpha: 0})
+//       .fromTo("#thu",{duration:5, transformOrigin: "50% 50%", scaleX:3, scaleY:3, x: 0, y:0}, {scaleX:2, scaleY:2})
+//       .to("#thu",{duration:.25, alpha:0})
+//       .from("#nhst",{duration:.05, alpha: 0})
+//       .fromTo("#nhst",{duration:5, transformOrigin: "50% 50%", scaleX:3, scaleY:3}, {scaleX:2, scaleY:2})
+//       .to("#nhst",{duration:.25, alpha:0})
+//       .from("#rhes",{duration:.05, alpha: 0})
+//       .fromTo("#rhes",{duration:5, transformOrigin: "50% 50%", scaleX:3, scaleY:3}, {scaleX:2, scaleY:2})
+//       .to("#rhes",{duration:.05, alpha:0},"same")
+//       .from("#letters",{duration:.05, alpha: 0},"same")
+//       .fromTo("#letters",{duration:5, transformOrigin: "50% 50%", scaleX:3, scaleY:3, x: 0, y:0}, {scaleX:1, scaleY:1});
 
-    return tl;
-}
+//     return tl;
+// }
 
 function backgroundtexture(){
 
   const tl = gsap.timeline();
 
-  tl.to("#p7",{duration:1, x:20, y:-20, transformOrigin: "50% 50%"},"same")
-    .to("#p8",{duration:1, x:-40, y:40, transformOrigin: "50% 50%"},"same")
-    .to("#p2",{duration:1, x:40, y:-40, transformOrigin: "50% 50%"},"same")
-    .to("#p3",{duration:1, x:-20, y:20, transformOrigin: "50% 50%"},"same")
-    .to("#p7",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2")
-    .to("#p8",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2")
+  tl.to("#p1",{duration:1, x:20, y:-20, transformOrigin: "50% 50%"},"same")
+    .to("#p2",{duration:1, x:-40, y:40, transformOrigin: "50% 50%"},"same")
+    .to("#p3",{duration:1, x:40, y:-40, transformOrigin: "50% 50%"},"same")
+    .to("#p4",{duration:1, x:-20, y:20, transformOrigin: "50% 50%"},"same")
+    .to("#p5",{duration:1, x:20, y:-20, transformOrigin: "50% 50%"},"same")
+    .to("#p6",{duration:1, x:-40, y:40, transformOrigin: "50% 50%"},"same")
+    .to("#p8",{duration:1, x:20, y:-20, transformOrigin: "50% 50%"},"same")
+    .to("#p1",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2")
     .to("#p2",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2")
-    .to("#p3",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2");
+    .to("#p3",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2")
+    .to("#p4",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2")
+    .to("#p5",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2")
+    .to("#p6",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2")
+    .to("#p8",{duration:1, x:0, y:0, transformOrigin: "50% 50%"},"same2");
+
+  return tl;
+}
+
+function zoomedin(){
+
+  const tl = gsap.timeline();
+
+  tl.from("#letters", { duration:0.5, alpha:0})
+    .fromTo("#letters", { duration:4, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: 500, y: -400}, {duration: 4, scaleY: 3, scaleX: 3, x: 400, y: 800},"same")
+    .from("#e,#ss", {duration:.5, transformOrigin: "50% 50%", y: 10},"same")
+    .fromTo("#letters", { duration:4, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: 0, y: 0}, {duration:4, scaleY: 3, scaleX: 3, x: -900, y: 300})
+    .fromTo("#letters", { duration:4, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: -400, y: -800}, {duration:4, scaleY: 3, scaleX: 3, x: -700, y: 300});
 
   return tl;
 }
@@ -117,7 +136,8 @@ function textcomein(){
 
 
 mainTL.add(textureglitch())
-      .add(lettersgrow(), "same")
+      .add(zoomedin())
+      //.add(lettersgrow(), "same")
       .add(backgroundtexture(),"same")
       .add(texturetextoffscreen())
       .add(textcomein(),"+=50%");
