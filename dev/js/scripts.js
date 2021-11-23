@@ -71,30 +71,31 @@ function zoomedin(){
     .fromTo("#letters", { duration:4, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: 500, y: -400}, {duration: 4, scaleY: 3, scaleX: 3, x: 400, y: 800},"same")
     .from("#e,#ss", {duration:.5, transformOrigin: "50% 50%", y: 10},"same")
     .fromTo("#letters", { duration:4, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: 0, y: 0}, {duration:4, scaleY: 3, scaleX: 3, x: -900, y: 300})
-    .fromTo("#letters", { duration:4, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: -400, y: -800}, {duration:4, scaleY: 3, scaleX: 3, x: -700, y: 300});
+    .fromTo("#letters", { duration:4, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: -400, y: -800}, {duration:4, scaleY: 3, scaleX: 3, x: -700, y: 300})
+    .fromTo("#letters", { duration:4, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: -700, y: 300}, {duration:4, scaleY: 1, scaleX: 1, x: 0, y: 0});
 
   return tl;
 }
 
-// function lettersgrow(){
+function lettersgrow(){
 
-//     const tl = gsap.timeline();
+    const tl = gsap.timeline();
 
-//     tl.fromTo(".set1",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25})
-//       .to(".set1",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
-//       .fromTo(".set2",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
-//       .to(".set2",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
-//       .fromTo(".set3",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
-//       .to(".set3",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
-//       .fromTo(".set4",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
-//       .to(".set4",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
-//       .fromTo(".set5",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
-//       .to(".set5",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
-//       .fromTo(".set6",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
-//       .to(".set6",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=50%");
+    tl.fromTo(".set1",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25})
+      .to(".set1",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+      .fromTo(".set2",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+      .to(".set2",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+      .fromTo(".set3",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+      .to(".set3",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+      .fromTo(".set4",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+      .to(".set4",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+      .fromTo(".set5",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+      .to(".set5",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=70%")
+      .fromTo(".set6",{duration:.5, transformOrigin: "50% 50%", scaleX:0, scaleY:0}, {scaleX:.25, scaleY:.25},"-=30%")
+      .to(".set6",{duration:.75, transformOrigin: "50% 50%", scaleX:1, scaleY:1, ease: "none"},"+=50%");
 
-//     return tl;
-// }
+    return tl;
+}
 
 function texturetextoffscreen(){
 
@@ -137,7 +138,7 @@ function textcomein(){
 
 mainTL.add(textureglitch())
       .add(zoomedin())
-      //.add(lettersgrow(), "same")
+      .add(lettersgrow(), "same")
       .add(backgroundtexture(),"same")
       .add(texturetextoffscreen())
       .add(textcomein(),"+=50%");
