@@ -28,51 +28,6 @@ function textureglitch(){
     return tl;
 }
 
-// function backgroundtexture(){
-
-//   const tl = gsap.timeline();
-
-//   tl.to("#p1",{duration:10, x:20, y:-20, transformOrigin: "50% 50%"},"same")
-//     .to("#p2",{duration:10, x:-40, y:40, transformOrigin: "50% 50%"},"same")
-//     .to("#p3",{duration:10, x:40, y:-40, transformOrigin: "50% 50%"},"same")
-//     .to("#p4",{duration:10, x:-20, y:20, transformOrigin: "50% 50%"},"same")
-//     .to("#p5",{duration:10, x:20, y:-20, transformOrigin: "50% 50%"},"same")
-//     .to("#p6",{duration:10, x:-40, y:40, transformOrigin: "50% 50%"},"same")
-//     .to("#p8",{duration:10, x:20, y:-20, transformOrigin: "50% 50%"},"same")
-//     .to("#p1",{duration:10, x:0, y:0, transformOrigin: "50% 50%"},"same2")
-//     .to("#p2",{duration:10, x:0, y:0, transformOrigin: "50% 50%"},"same2")
-//     .to("#p3",{duration:10, x:0, y:0, transformOrigin: "50% 50%"},"same2")
-//     .to("#p4",{duration:10, x:0, y:0, transformOrigin: "50% 50%"},"same2")
-//     .to("#p5",{duration:10, x:0, y:0, transformOrigin: "50% 50%"},"same2")
-//     .to("#p6",{duration:10, x:0, y:0, transformOrigin: "50% 50%"},"same2")
-//     .to("#p8",{duration:10, x:0, y:0, transformOrigin: "50% 50%"},"same2");
-
-//   return tl;
-// }
-
-
-// function zoomedin(){
-
-//   const tl = gsap.timeline();
-
-//   tl.from("#t_2", { duration:5, transformOrigin: "50% 50%", y: -2000, x:-1000, scale: 0},"same1")
-//     .from("#e_2", { duration:5, transformOrigin: "50% 50%", y: -2000, x:-1000, scale: 0},"same1")
-//     .from("#u_2", { duration:5, transformOrigin: "50% 50%", y: 2000, x:1000, scale: 0},"same1")
-//     .from("#ss_3", { duration:5, transformOrigin: "50% 50%", y: -2000, x:1000, scale: 0},"same1")
-//     .to("#set1", { duration: 0.5 ,alpha:0})
-//     .from("#n_2", { duration:5, transformOrigin: "50% 50%", y: 500, x:500, scale: 0},"same2")
-//     .from("#ss_2", { duration:5, transformOrigin: "50% 50%", y: 500, x:-500, scale: 0},"same2")
-//     .to("#set2", { duration: 0.5 ,alpha:0})
-//     .from("#s_2", { duration:5, transformOrigin: "50% 50%", y: 700, scale: 0},"same3")
-//     .from("#ee_2", { duration:5, transformOrigin: "50% 50%", x:1000, scale: 0},"same3")
-//     .to("#set3", { duration: 0.5 ,alpha:0})
-//     .from("#r_2", { duration:5, transformOrigin: "50% 50%", y: 700, scale: 0},"same4")
-//     .from("#h_2", { duration:5, transformOrigin: "50% 50%", x:1000, scale: 0},"same4")
-//     .to("#set4", { duration: 0.5 ,alpha:0});
-
-//   return tl;
-// }
-
 function backgroundtexture(){
 
   const tl = gsap.timeline();
@@ -100,9 +55,9 @@ function zoomedin(){
   const tl = gsap.timeline();
 
   tl.from("#letters", { duration:0.5, alpha:0})
-    .fromTo("#letters", { duration:10, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: 1100, y: -1300}, {duration: 4, scaleY: 3, scaleX: 3, x: 500, y: -400})
-    .fromTo("#letters", { duration:10, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: 0, y: 0}, {duration:4, scaleY: 3, scaleX: 3, x: -900, y: 300})
-    .fromTo("#letters", { duration:10, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: -400, y: -800}, {duration:4, scaleY: 3, scaleX: 3, x: 400, y: 800})
+    .fromTo("#letters", { duration:7, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: 1100, y: -1300}, {duration: 7, scaleY: 3, scaleX: 3, x: 500, y: -400})
+    .fromTo("#letters", { duration:8, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: 0, y: 0}, {duration:9, scaleY: 3, scaleX: 3, x: -900, y: 300})
+    .fromTo("#letters", { duration:7, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: -400, y: -800}, {duration:7, scaleY: 3, scaleX: 3, x: 400, y: 800})
     .to("#letters", { duration: 0.5, alpha: 0},"same")
     .to("#ptexture", { duration: 0.5 ,alpha:0}, "same");
 
@@ -119,17 +74,7 @@ function textcomein(){
       .to("#the", {duration:1, x: -106, y: -13, ease: "none"},"same4")
       .to("#huntress", {duration:1, x: 43, y: -13, ease: "none"},"same4")
       .to("#sofia", {duration:1, x: 4, y: 14, ease: "none"},"same4")
-      .to("#samatar", {duration:1, x: 4, y: 14, ease: "none"},"same4")
-      .to("#title", {duration: .5, transformOrigin: "50% 50%", x: 10, y: -10})
-      .to("#title", {duration: .05, alpha:0})
-      .to("#title", {duration: .05, alpha:1})
-      .to("#title", {duration: .5, transformOrigin: "50% 50%", x: -10, y: 10})
-      .to("#title", {duration: .05, alpha:0})
-      .to("#title", {duration: .05, alpha:1})
-      .to("#title", {duration: .5, transformOrigin: "50% 50%", x: -20, y: -20})
-      .to("#title", {duration: .05, alpha:0})
-      .to("#title", {duration: .05, alpha:1})
-      .to("#title", {duration: .5, transformOrigin: "50% 50%", x: 0, y: 0});
+      .to("#samatar", {duration:1, x: 4, y: 14, ease: "none"},"same4");
 
     return tl;
 }
