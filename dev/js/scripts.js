@@ -69,7 +69,8 @@ function textcomein(){
       .to("#the", {duration:2, x: -106, y: -13, ease: "none"},"same4")
       .to("#huntress", {duration:2, x: 43, y: -13, ease: "none"},"same4")
       .to("#sofia", {duration:2, x: 4, y: 14, ease: "none"},"same4")
-      .to("#samatar", {duration:2, x: 4, y: 14, ease: "none"},"same4");
+      .to("#samatar", {duration:2, x: 4, y: 14, ease: "none"},"same4")
+      .to("#title", {duration: 2, alpha:1  });
 
     return tl;
 }
