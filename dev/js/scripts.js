@@ -54,7 +54,16 @@ function zoomedin(){
     .fromTo("#letters", { duration:9, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: 0, y: 0, ease: "none"}, {duration:9, scaleY: 3, scaleX: 3, x: -500, y: 300, ease: "none"})
     .fromTo("#letters", { duration:6, transformOrigin: "50% 50%", scaleX: 3, scaleY: 3, x: 200, y: 500, ease: "none"}, {duration:6, scaleY: 3, scaleX: 3, x: 300, y: 700, ease: "none"})
     .to("#letters", { duration: 0.05, alpha: 0},"same")
-    .to("#ptexture", { duration: 0.05 ,alpha:0}, "same");
+    .to(".text1",{duration:.25, alpha: 0})
+    .to(".text2",{duration:.25, alpha: 0},"-=50%")
+    .to(".text3",{duration:.25, alpha: 0},"-=50%")
+    .to(".text4",{duration:.25, alpha: 0},"-=50%")
+    .to(".text5",{duration:.25, alpha: 0},"-=50%")
+    .to(".text6",{duration:.25, alpha: 0},"-=50%")
+    .to(".text7",{duration:.25, alpha: 0},"-=50%")
+    .to(".text8",{duration:.25, alpha: 0},"-=50%")
+    .to(".text9",{duration:.25, alpha: 0},"-=50%")
+    .to(".text10",{duration:.25, alpha: 0},"-=50%");
 
   return tl;
 }
@@ -70,7 +79,7 @@ function textcomein(){
       .to("#huntress", {duration:2, x: 43, y: -13, ease: "none"},"same4")
       .to("#sofia", {duration:2, x: 4, y: 14, ease: "none"},"same4")
       .to("#samatar", {duration:2, x: 4, y: 14, ease: "none"},"same4")
-      .to("#title", {duration: 2, alpha:1  });
+      .to("#title", {duration: 2, alpha:1});
 
     return tl;
 }
